@@ -17,6 +17,7 @@ def create_user(data):
     try:
         user = User( email=data['email'])
         user.set_password( data['password'])
+        user.set_id()
         customer= Customer(email= data['email'], firstName= data['firstName'], lastName= data['lastName'], phoneNumber= data['phoneNumber'], country=data['country'], address= data['address'])
         db.session.add(user)
         db.session.add(customer)
