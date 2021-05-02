@@ -49,7 +49,7 @@ def loadConfig(app):
 def create_app():
     app = Flask(__name__, static_url_path='/static')
     loadConfig(app)
-    app.config['SECRET_KEY'] = "MYSECRET"
+    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['PREFERRED_URL_SCHEME'] = 'https'
