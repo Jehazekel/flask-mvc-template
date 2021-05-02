@@ -1,0 +1,89 @@
+{% extends "Layout.html" %}
+{% block head %}
+
+{% endblock %}
+{% block title %}Login{% endblock %}
+
+{% block style %}
+    body{
+ 
+ background-image: url( {{ url_for('static', filename='photo-1496417263034-38ec4f0b665a.png') }} )
+  }
+{% endblock %}
+
+{{ super() }}
+
+{%  block content%}
+    <style>
+
+
+    #Login-Signup-Form{
+
+    border-radius: 3%;
+    background-color:white;
+    opacity: 0.9;
+
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    
+    width: 50%;
+    
+    border: 3px solid black;
+    
+    justify-content: center;
+    align-items: center;
+    }
+
+   #Login-Signup-Container{
+    //background-image: url('photo-1496417263034-38ec4f0b665a.png');
+    background-color:grey;
+
+    /*
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+
+    background-image: url({{url_for('static',filename='photo-1496417263034-38ec4f0b665a.png')}});
+    */
+  }
+
+  .black::after{
+    colour: black;
+
+  }
+
+    </style>
+
+  <div id="Login-Signup-Container">
+
+
+        <div id="Login-Signup-Form">
+            <form class="col s12" method="POST" action="/login">
+
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Enter email" name="email" id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Enter password" name="password" id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+             
+               <button class="dark blue waves-effect waves-light btn-large" type="submit" >Login!</button>
+                   
+            </form>
+            <p> Don't have an account? <a href="/signupForm">Signup!</a> </p>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
